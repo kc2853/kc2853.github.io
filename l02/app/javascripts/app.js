@@ -1,5 +1,5 @@
 // Import the page's CSS. Webpack will know what to do with it.
-import "./app.css";
+import "../stylesheets/app.css";
 
 // Import libraries we need.
 import { default as Web3} from 'web3';
@@ -50,12 +50,11 @@ window.App = {
 
   refreshBalance: function() {
     var self = this;
-    document.getElementbyId("balance")=10;
-/*
+
     var meta;
     MetaCoin.deployed().then(function(instance) {
       meta = instance;
-      return meta.getBalance.call(account, {from: account});
+      return meta.getBalance.call(account, {from: account, gas:500000});
     }).then(function(value) {
       var balance_element = document.getElementById("balance");
       balance_element.innerHTML = value.valueOf();
@@ -64,7 +63,6 @@ window.App = {
       self.setStatus("Error getting balance; see log.");
     });
   },
-*/
 
   sendCoin: function() {
     var self = this;
