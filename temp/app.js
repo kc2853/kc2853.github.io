@@ -50,7 +50,8 @@ window.App = {
 
   refreshBalance: function() {
     var self = this;
-
+    document.getElementbyId("balance")=10;
+/*
     var meta;
     MetaCoin.deployed().then(function(instance) {
       meta = instance;
@@ -63,6 +64,7 @@ window.App = {
       self.setStatus("Error getting balance; see log.");
     });
   },
+*/
 
   sendCoin: function() {
     var self = this;
