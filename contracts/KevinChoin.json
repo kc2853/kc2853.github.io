@@ -1,0 +1,174 @@
+{
+  "contract_name": "KevinChoin",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "kill",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "sendCoin",
+      "outputs": [
+        {
+          "name": "sufficient",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "sendCoinFromContract",
+      "outputs": [
+        {
+          "name": "sufficient",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "receivedFunds",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b5b60008054600160a060020a03191633600160a060020a03161790555b600160a060020a03328116600090815260016020526040808220612710908190553090931682529020555b5b610306806100686000396000f3006060604052361561005f5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166341c0e1b581146100b157806390b98a11146100c6578063dbc3c4ff146100fc578063f8b2cb4f14610132575b5b60003411156100ae577f3f638da77ee3d49db2211092b965c9c7c2fcb68fea5e8f85986200f8776f6a1d3334604051600160a060020a03909216825260208201526040908101905180910390a15b5b005b34156100bc57600080fd5b6100ae610163565b005b34156100d157600080fd5b6100e8600160a060020a036004351660243561018b565b604051901515815260200160405180910390f35b341561010757600080fd5b6100e8600160a060020a0360043516602435610223565b604051901515815260200160405180910390f35b341561013d57600080fd5b610151600160a060020a03600435166102bb565b60405190815260200160405180910390f35b60005433600160a060020a039081169116141561018857600054600160a060020a0316ff5b5b565b600160a060020a033316600090815260016020526040812054829010156101b45750600061021d565b600160a060020a033381166000818152600160205260408082208054879003905592861680825290839020805486019055917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9085905190815260200160405180910390a35060015b92915050565b600160a060020a0330166000908152600160205260408120548290101561024c5750600061021d565b600160a060020a033081166000818152600160205260408082208054879003905592861680825290839020805486019055917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9085905190815260200160405180910390a35060015b92915050565b600160a060020a0381166000908152600160205260409020545b9190505600a165627a7a7230582021e9b4446a286ca7a5d82fe8c47894e30c9279261669c89e516e290a681a11990029",
+  "networks": {
+    "4": {
+      "events": {
+        "0x3f638da77ee3d49db2211092b965c9c7c2fcb68fea5e8f85986200f8776f6a1d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "receivedFunds",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xf0d7530a22ddf3c231b6034e73168a275f61c580",
+      "updated_at": 1508302570278
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1508302570278
+}

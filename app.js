@@ -21943,23 +21943,13 @@ module.exports = Jsonrpc;
 /***/ (function(module, exports) {
 
 module.exports = {
-	"contract_name": "MetaCoin",
+	"contract_name": "KevinChoin",
 	"abi": [
 		{
 			"constant": false,
-			"inputs": [
-				{
-					"name": "addr",
-					"type": "address"
-				}
-			],
-			"name": "getBalanceInEth",
-			"outputs": [
-				{
-					"name": "",
-					"type": "uint256"
-				}
-			],
+			"inputs": [],
+			"name": "kill",
+			"outputs": [],
 			"payable": false,
 			"type": "function"
 		},
@@ -21989,6 +21979,28 @@ module.exports = {
 			"constant": false,
 			"inputs": [
 				{
+					"name": "receiver",
+					"type": "address"
+				},
+				{
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "sendCoinFromContract",
+			"outputs": [
+				{
+					"name": "sufficient",
+					"type": "bool"
+				}
+			],
+			"payable": false,
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
 					"name": "addr",
 					"type": "address"
 				}
@@ -22007,6 +22019,27 @@ module.exports = {
 			"inputs": [],
 			"payable": false,
 			"type": "constructor"
+		},
+		{
+			"payable": true,
+			"type": "fallback"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"name": "_from",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"name": "_amount",
+					"type": "uint256"
+				}
+			],
+			"name": "receivedFunds",
+			"type": "event"
 		},
 		{
 			"anonymous": false,
@@ -22031,10 +22064,27 @@ module.exports = {
 			"type": "event"
 		}
 	],
-	"unlinked_binary": "0x6060604052341561000f57600080fd5b5b600160a060020a033216600090815260208190526040902061271090555b5b6102728061003e6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416637bd703e8811461005357806390b98a1114610084578063f8b2cb4f146100ba575b600080fd5b341561005e57600080fd5b610072600160a060020a03600435166100eb565b60405190815260200160405180910390f35b341561008f57600080fd5b6100a6600160a060020a036004351660243561018f565b604051901515815260200160405180910390f35b34156100c557600080fd5b610072600160a060020a0360043516610227565b60405190815260200160405180910390f35b600073__ConvertLib____________________________6396e4ee3d61011084610227565b60026000604051602001526040517c010000000000000000000000000000000000000000000000000000000063ffffffff85160281526004810192909252602482015260440160206040518083038186803b151561016d57600080fd5b6102c65a03f4151561017e57600080fd5b50505060405180519150505b919050565b600160a060020a033316600090815260208190526040812054829010156101b857506000610221565b600160a060020a033381166000818152602081905260408082208054879003905592861680825290839020805486019055917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9085905190815260200160405180910390a35060015b92915050565b600160a060020a0381166000908152602081905260409020545b9190505600a165627a7a72305820e1c0e2c02eb36630ae35c5367b8ed2c6b48bc8814b10731396679baad6b451d20029",
+	"unlinked_binary": "0x6060604052341561000f57600080fd5b5b5b60008054600160a060020a03191633600160a060020a03161790555b600160a060020a03328116600090815260016020526040808220612710908190553090931682529020555b5b610306806100686000396000f3006060604052361561005f5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166341c0e1b581146100b157806390b98a11146100c6578063dbc3c4ff146100fc578063f8b2cb4f14610132575b5b60003411156100ae577f3f638da77ee3d49db2211092b965c9c7c2fcb68fea5e8f85986200f8776f6a1d3334604051600160a060020a03909216825260208201526040908101905180910390a15b5b005b34156100bc57600080fd5b6100ae610163565b005b34156100d157600080fd5b6100e8600160a060020a036004351660243561018b565b604051901515815260200160405180910390f35b341561010757600080fd5b6100e8600160a060020a0360043516602435610223565b604051901515815260200160405180910390f35b341561013d57600080fd5b610151600160a060020a03600435166102bb565b60405190815260200160405180910390f35b60005433600160a060020a039081169116141561018857600054600160a060020a0316ff5b5b565b600160a060020a033316600090815260016020526040812054829010156101b45750600061021d565b600160a060020a033381166000818152600160205260408082208054879003905592861680825290839020805486019055917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9085905190815260200160405180910390a35060015b92915050565b600160a060020a0330166000908152600160205260408120548290101561024c5750600061021d565b600160a060020a033081166000818152600160205260408082208054879003905592861680825290839020805486019055917fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9085905190815260200160405180910390a35060015b92915050565b600160a060020a0381166000908152600160205260409020545b9190505600a165627a7a7230582021e9b4446a286ca7a5d82fe8c47894e30c9279261669c89e516e290a681a11990029",
 	"networks": {
 		"4": {
 			"events": {
+				"0x3f638da77ee3d49db2211092b965c9c7c2fcb68fea5e8f85986200f8776f6a1d": {
+					"anonymous": false,
+					"inputs": [
+						{
+							"indexed": false,
+							"name": "_from",
+							"type": "address"
+						},
+						{
+							"indexed": false,
+							"name": "_amount",
+							"type": "uint256"
+						}
+					],
+					"name": "receivedFunds",
+					"type": "event"
+				},
 				"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
 					"anonymous": false,
 					"inputs": [
@@ -22058,46 +22108,13 @@ module.exports = {
 					"type": "event"
 				}
 			},
-			"links": {
-				"ConvertLib": "0x223a14ab2f5175f4a8ab1ec2d6a6d6b5fb2f1039"
-			},
-			"address": "0xe7996c7a8ab8f25f467619aac791326fb1d45c43",
-			"updated_at": 1508223086125
-		},
-		"1507933800965": {
-			"events": {
-				"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
-					"anonymous": false,
-					"inputs": [
-						{
-							"indexed": true,
-							"name": "_from",
-							"type": "address"
-						},
-						{
-							"indexed": true,
-							"name": "_to",
-							"type": "address"
-						},
-						{
-							"indexed": false,
-							"name": "_value",
-							"type": "uint256"
-						}
-					],
-					"name": "Transfer",
-					"type": "event"
-				}
-			},
-			"links": {
-				"ConvertLib": "0xfe30df5e1934a507bb5d0ef8c9bd3b2ad7920fb9"
-			},
-			"address": "0x6a5327c6e16ecff73ae05bb3afba14c59d9bbfdd",
-			"updated_at": 1507933813049
+			"links": {},
+			"address": "0xf0d7530a22ddf3c231b6034e73168a275f61c580",
+			"updated_at": 1508302570278
 		}
 	},
 	"schema_version": "0.0.5",
-	"updated_at": 1508223086125
+	"updated_at": 1508302570278
 };
 
 /***/ }),
@@ -25379,7 +25396,7 @@ exports = module.exports = __webpack_require__(80)();
 
 
 // module
-exports.push([module.i, "body {\n  margin-left: 25%;\n  margin-right: 25%;\n  margin-top: 10%;\n  font-family: \"Open Sans\", sans-serif;\n}\n\nlabel {\n  display: inline-block;\n  width: 100px;\n}\n\ninput {\n  width: 500px;\n  padding: 5px;\n  font-size: 16px;\n}\n\nbutton {\n  font-size: 16px;\n  padding: 5px;\n}\n\nh1, h2 {\n  display: inline-block;\n  vertical-align: middle;\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\nh2 {\n  color: #AAA;\n  font-size: 32px;\n}\n\nh3 {\n  font-weight: normal;\n  color: #AAA;\n  font-size: 24px;\n}\n\n.black {\n  color: black;\n}\n\n#balance {\n  color: black;\n}\n\n.hint {\n  color: #666;\n}\n", ""]);
+exports.push([module.i, "body {\n  margin-left: 20%;\n  margin-right: 20%;\n  margin-top: 10%;\n  font-family: 'Signika Negative', sans-serif;\n}\n\nlabel {\n  display: inline-block;\n  width: 100px;\n}\n\ninput {\n  width: 500px;\n  padding: 5px;\n  font-size: 16px;\n}\n\nbutton {\n  font-size: 16px;\n  padding: 10px;\n}\n\n.button {\n    background-color: #4CAF50; /* Green */\n    border: none;\n    color: white;\n    text-align: center;\n    text-decoration: none;\n    display: inline-block;\n    margin: 4px 2px;\n    cursor: pointer;\n    background-color: white;\n    color: black;\n    border: 2px solid #4CAF50;\n}\n\n.button1 {\n    background-color: white;\n    color: black;\n    border: 2px solid #4CAF50;\n}\n\nh1, h2 {\n  vertical-align: middle;\n  margin-top: 0px;\n  margin-bottom: 10px;\n}\n\nh1 {\n    color: blue;\n    font-size: 250%;\n    font-style: italic;\n}\n\nh2 {\n  color: #AAA;\n  font-size: 32px;\n  font-style: italic;\n}\n\nh3 {\n  font-weight: normal;\n  color: #AAA;\n  font-size: 24px;\n  font-style: italic;\n}\n\n.black {\n  color: black;\n}\n\n#balance {\n  color: black;\n}\n\n.hint {\n  color: #666;\n}\n\n.long_log\n{\n    word-break: break-all;\n}\n", ""]);
 
 // exports
 
@@ -35821,8 +35838,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_web3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_web3__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_truffle_contract__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_truffle_contract__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_KevinChoin_json__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__build_contracts_KevinChoin_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__build_contracts_KevinChoin_json__);
 // Import the page's CSS. Webpack will know what to do with it.
 
 
@@ -35834,7 +35851,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 // MetaCoin is our usable abstraction, which we'll use through the code below.
-var MetaCoin = __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default()(__WEBPACK_IMPORTED_MODULE_3__build_contracts_MetaCoin_json___default.a);
+var KevinChoin = __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default()(__WEBPACK_IMPORTED_MODULE_3__build_contracts_KevinChoin_json___default.a);
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -35842,22 +35859,29 @@ var MetaCoin = __WEBPACK_IMPORTED_MODULE_2_truffle_contract___default()(__WEBPAC
 var accounts;
 var account;
 
+// Initialize math problem
+var random1=Math.floor(Math.random()*21);
+var random2=Math.floor(Math.random()*21);
+document.getElementById("math").innerHTML = random1 + " * " + random2 + " = ";
+
 window.App = {
   start: function() {
     var self = this;
 
     // Bootstrap the MetaCoin abstraction for Use.
-    MetaCoin.setProvider(web3.currentProvider);
+    KevinChoin.setProvider(web3.currentProvider);
 
     // Get the initial account balance so it can be displayed.
     web3.eth.getAccounts(function(err, accs) {
       if (err != null) {
-        alert("There was an error fetching your accounts.");
+        alert("There was an error fetching your accounts. Please follow the instructions carefully.");
+        document.getElementById("instructions").innerHTML = "Instructions:<br>1. Use Chrome as your browser.<br>2. Download a Chrome extension called MetaMask from: http://metamask.io<br>3. Create an account on MetaMask (a dummy account; takes 10 seconds), and change your network from Main Ethereum Network to Rinkeby Test Network. Essentially, MetaMask is the communication port that links your browser to Ethereum's blockchain.<br>4. Note that your public address should look something like: 0x15ab873d09353098fe0938989e93b3409c3098a4<br>5. Get some fake Ether to your public address. Follow instructions on http://faucet.rinkeby.io/<br>(6. The first option of requesting funds via GitHub might be the best.)<br><br><br><br>";
         return;
       }
 
       if (accs.length == 0) {
-        alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly.");
+        alert("Couldn't get any accounts! Please follow the instructions carefully.");
+        document.getElementById("instructions").innerHTML = "Instructions:<br>1. Use Chrome as your browser.<br>2. Download a Chrome extension called MetaMask from: http://metamask.io<br>3. Create an account on MetaMask (a dummy account; takes 10 seconds), and change your network from Main Ethereum Network to Rinkeby Test Network. Essentially, MetaMask is the communication port that links your browser to Ethereum's blockchain.<br>4. Note that your public address should look something like: 0x15ab873d09353098fe0938989e93b3409c3098a4<br>5. Get some fake Ether to your public address. Follow instructions on http://faucet.rinkeby.io/<br>(6. The first option of requesting funds via GitHub might be the best.)<br><br><br><br>";
         return;
       }
 
@@ -35865,21 +35889,27 @@ window.App = {
       account = accounts[0];
 
       self.refreshBalance();
+      self.refreshContractBalance();
     });
   },
 
   setStatus: function(message) {
     var status = document.getElementById("status");
-    status.innerHTML = message;
+    status.innerHTML = "<span style='color:red;'>"+message+"</span>";
+  },
+
+  setMathStatus: function(message) {
+      document.getElementById("mathstatus").innerHTML = "<span style='color:red;'>"+message+"</span>";
   },
 
   refreshBalance: function() {
     var self = this;
 
     var meta;
-    MetaCoin.deployed().then(function(instance) {
+    KevinChoin.deployed().then(function(instance) {
       meta = instance;
-      return meta.getBalance.call(account, {from: account, gas:500000});
+      return meta.getBalance.call(account);
+      // meta.getBalance.call(account, {from: "0xac3e9484408EF2293333A04529C33A3bB0dEBE06", gas:500000});
     }).then(function(value) {
       var balance_element = document.getElementById("balance");
       balance_element.innerHTML = value.valueOf();
@@ -35887,6 +35917,18 @@ window.App = {
       console.log(e);
       self.setStatus("Error getting balance; see log.");
     });
+  },
+
+  refreshContractBalance: function() {
+      KevinChoin.deployed().then(function(instance) {
+        return instance.getBalance.call(instance.address);
+        // meta.getBalance.call(account, {from: "0xac3e9484408EF2293333A04529C33A3bB0dEBE06", gas:500000});
+      }).then(function(value) {
+        document.getElementById("contractbalance").innerHTML = value.valueOf();
+      }).catch(function(e) {
+        console.log(e);
+        self.setStatus("Error getting balance; see log.");
+      });
   },
 
   sendCoin: function() {
@@ -35898,7 +35940,7 @@ window.App = {
     this.setStatus("Initiating transaction... (please wait)");
 
     var meta;
-    MetaCoin.deployed().then(function(instance) {
+    KevinChoin.deployed().then(function(instance) {
       meta = instance;
       return meta.sendCoin(receiver, amount, {from: account});
     }).then(function() {
@@ -35908,13 +35950,37 @@ window.App = {
       console.log(e);
       self.setStatus("Error sending coin; see log.");
     });
+  },
+
+  checkMath: function() {
+      var answer = parseInt(document.getElementById("answer").value);
+      var self = this;
+
+      this.setMathStatus("Initiating transaction... (please wait)");
+
+      if(random1*random2 === answer) {
+          KevinChoin.deployed().then(function(instance) {
+              return instance.sendCoinFromContract(account, 50, {from: account});
+          }).then(function() {
+              self.setMathStatus("Transaction complete! You should've gotten 50 KCN.");
+              self.refreshBalance();
+              self.refreshContractBalance();
+          }).catch(function(e) {
+              console.log(e);
+              self.setMathStatus("Error in transaction; see log.");
+          });
+      } else {
+          this.setMathStatus("Wrong answer. Please refresh the page, and try again.");
+      }
   }
 };
+
+
 
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
+    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 KevinChoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     // Use Mist/MetaMask's provider
     window.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(web3.currentProvider);
   } else {
