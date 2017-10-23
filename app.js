@@ -35892,7 +35892,7 @@ window.App = {
       self.refreshContractBalance();
 
       KevinChoin.deployed().then(function(instance) {
-          instance.allEvents({fromBlock: 0, toBlock: 'latest'}, function(error, result) {
+          instance.allEvents({fromBlock: 0, toBlock: 'latest'}).get(function(error, result) {
               if(error) {
                   console.error(error);
               } else {
@@ -35900,6 +35900,16 @@ window.App = {
               }
           });
       });
+
+/*      KevinChoin.deployed().then(function(instance) {
+          instance.Transfer({}, {fromBlock: 0, toBlock: 'latest'}).get(function(error, result) {
+              if(error) {
+                  console.error(error);
+              } else {
+                  console.log(result);
+              }
+          });
+      });*/
     });
   },
 
